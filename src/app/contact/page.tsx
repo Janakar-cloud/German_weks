@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Phone, Mail, MapPin, Instagram, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, Facebook } from "lucide-react";
+
+
 
 type FormData = {
   name: string;
@@ -18,14 +21,38 @@ type FormData = {
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    console.log(data);
-    // Here you would typically send the data to your backend
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form');
+      }
+
+      setIsSubmitted(true);
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -54,55 +81,80 @@ export default function ContactPage() {
 
               <div className="space-y-6 mb-12">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                    <Phone className="h-6 w-6" />
-                  </div>
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Phone className="w-6 h-6" />
+                  </motion.div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
-                    <a href="tel:+919944438636" className="text-gray-600 hover:text-gray-900">
-                      +91-994 443 8636
-                    </a>
+                    <div className="space-y-1">
+                      <a href="tel:+919092920927" className="text-gray-600 hover:text-gray-900 block">+91 90 92 92 0927</a>
+                      <a href="tel:+919092920928" className="text-gray-600 hover:text-gray-900 block">+91 90 92 92 0928</a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                    <Mail className="h-6 w-6" />
-                  </div>
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Mail className="w-6 h-6" />
+                  </motion.div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                    <a href="mailto:germanwerks26@gmail.com" className="text-gray-600 hover:text-gray-900">
-                      germanwerks26@gmail.com
+                    <a href="mailto:service@germanweks.in" className="text-gray-600 hover:text-gray-900">
+                      service@germanweks.in
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                    <MapPin className="h-6 w-6" />
-                  </div>
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <MapPin className="w-6 h-6" />
+                  </motion.div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Location</h3>
                     <p className="text-gray-600">
-                      Coimbatore, Tamil Nadu, India
+                      No-9/145, Kaikolapalayam,<br />
+                      Vellanaipatti Road,<br />
+                      Coimbatore – 641 062
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center">
-                    <Instagram className="h-6 w-6" />
-                  </div>
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Facebook className="w-6 h-6" />
+                  </motion.div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Social Media</h3>
-                    <a
-                      href="https://instagram.com/german_werks_"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900"
-                    >
-                      @german_werks_
-                    </a>
+                    <div className="space-y-1">
+                      <a
+                        href="https://www.facebook.com/share/1APXz9QMmo/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-900 block"
+                      >
+                        Facebook
+                      </a>
+                      <a
+                        href="https://instagram.com/german_werks_"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 hover:text-gray-900 block"
+                      >
+                        Instagram
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -110,7 +162,7 @@ export default function ContactPage() {
               {/* Business Hours */}
               <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                 <div className="flex items-center mb-6">
-                  <Clock className="h-6 w-6 text-gray-900 mr-3" />
+                  
                   <h3 className="text-xl font-heading font-bold text-gray-900">
                     Business Hours
                   </h3>
@@ -126,7 +178,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-sm text-gray-600">
-                  <Calendar className="inline h-4 w-4 mr-2" />
+                  
                   Launching January 2026
                 </p>
               </div>
@@ -143,6 +195,14 @@ export default function ContactPage() {
                   <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-green-800 font-medium">
                       Thank you! We'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-800 font-medium">
+                      {submitError}
                     </p>
                   </div>
                 )}
@@ -191,7 +251,7 @@ export default function ContactPage() {
                       id="phone"
                       type="tel"
                       {...register("phone", { required: "Phone number is required" })}
-                      placeholder="+91 9944438636"
+                      placeholder="+91 90 92 92 0927"
                     />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
@@ -247,8 +307,8 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    Submit Request
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? 'Submitting...' : 'Submit Request'}
                   </Button>
 
                   <p className="text-xs text-gray-500 text-center">
@@ -261,17 +321,42 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-200 rounded-2xl overflow-hidden" style={{ height: "400px" }}>
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 mx-auto mb-4" />
-                <p className="text-lg font-medium">Map Coming Soon</p>
-                <p className="text-sm mt-2">Location details will be available at launch</p>
-              </div>
-            </div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">
+              Visit Our Location
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              No-9/145, Kaikolapalayam, Vellanaipatti Road, Coimbatore – 641 062
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200" style={{ height: "500px" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.721965290234!2d77.0538512517459!3d11.072217918008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857fcd5b0a825%3A0xe007f5c61fdc4a33!2sGerman%20Werks!5e0!3m2!1sen!2sin!4v1767889308931!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="German Werks Location - Kaikolapalayam, Coimbatore"
+            />
+          </div>
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600 mb-2">
+              📍 No-9/145, Kaikolapalayam, Vellanaipatti Road, Coimbatore – 641 062
+            </p>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=No-9/145,+Kaikolapalayam,+Vellanaipatti+Road,+Coimbatore+-+641+062"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mt-4 text-gray-900 hover:text-gray-700 font-medium transition-colors"
+            >
+              
+              Get Directions
+            </a>
           </div>
         </div>
       </section>

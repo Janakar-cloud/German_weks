@@ -40,7 +40,7 @@ German Werks Website
 │   └── CTA Section
 │       ├── CTA: Book a Service
 │       ├── CTA: View All Services
-│       ├── Phone: +91-994 443 8636
+│       ├── Phone: Gopal +91 90 92 92 0924 | Dhilip +91 90 92 92 0927 (Primary) | Gokul +91 90 92 92 0928 (Secondary)
 │       └── Instagram: @german_werks_
 │
 ├── 🔧 SERVICES (/services)
@@ -157,8 +157,8 @@ German Werks Website
 │   │   └── Page Introduction
 │   │
 │   ├── Contact Information
-│   │   ├── Phone: +91-994 443 8636
-│   │   ├── Email: germanwerks26@gmail.com
+│   │   ├── Phone: Gopal +91 90 92 92 0924 | Dhilip +91 90 92 92 0927 (Primary) | Gokul +91 90 92 92 0928 (Secondary)
+│   │   ├── Email: service@germanweks.in
 │   │   ├── Location: Coimbatore, TN
 │   │   └── Instagram: @german_werks_
 │   │

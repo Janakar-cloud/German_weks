@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Phone, Calendar, Instagram } from "lucide-react";
+
+
 
 export function CTA() {
   return (
@@ -26,25 +27,25 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="xl" className="bg-white text-gray-900 hover:bg-gray-100">
-              <Link href="/contact">
-                <Calendar className="mr-2 h-5 w-5" />
+              <Link href="/contact" className="flex items-center">
+                
                 Book a Service
               </Link>
             </Button>
-            <Button asChild size="xl" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild size="xl" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent">
               <Link href="/services">
-                View All Services
+                View Our Services
               </Link>
             </Button>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-300">
             <a
-              href="tel:+919944438636"
+              href="tel:+919092920927"
               className="flex items-center hover:text-white transition-colors"
             >
-              <Phone className="h-5 w-5 mr-2" />
-              +91-994 443 8636
+              
+              +91 90 92 92 0927 (Dhilip - Primary)
             </a>
             <span className="hidden sm:block text-gray-600">•</span>
             <a
@@ -53,7 +54,7 @@ export function CTA() {
               rel="noopener noreferrer"
               className="flex items-center hover:text-white transition-colors"
             >
-              <Instagram className="h-5 w-5 mr-2" />
+              
               @german_werks_
             </a>
           </div>

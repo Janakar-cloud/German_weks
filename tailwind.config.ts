@@ -48,6 +48,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         heading: ["var(--font-montserrat)"],
+        newtown: ["Newtown", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

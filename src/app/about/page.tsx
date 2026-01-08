@@ -1,52 +1,82 @@
-import type { Metadata } from "next";
-import { Award, Users, Target, Briefcase } from "lucide-react";
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-  title: "About Us | German Werks - Premium German Car Experts in Coimbatore",
-  description: "Meet the certified team behind German Werks. Founded in 2024, we're South India's premier destination for German and European automotive care.",
+const iconGifs = {
+  award: "https://cdn-icons-png.flaticon.com/128/2917/2917995.png",
+  users: "https://cdn-icons-png.flaticon.com/128/1256/1256650.png",
+  target: "https://cdn-icons-png.flaticon.com/128/1055/1055687.png",
+  briefcase: "https://cdn-icons-png.flaticon.com/128/3281/3281289.png",
 };
 
 const founders = [
   {
     name: "Dhilip",
     role: "Founder & Technical Director",
-    description: "Certified BMW Service Advisor with 12+ years of experience. Leads operations, diagnostics, and performance strategy. Currently training internationally in chip tuning and remapping.",
-    expertise: ["BMW Specialist", "Operations Management", "Performance Tuning", "Diagnostics"],
+    experience: "10+ years in the automobile industry",
+    description: "Pan-India No. 1 Service Advisor Award (2025). Expertise in workshop operations, customer service excellence, and advanced vehicle diagnostics.",
+    image: null,
+    careerPath: [
+      "Mitsubishi – Technician",
+      "Maruti Suzuki – Technician",
+      "Volkswagen – Service Advisor",
+      "Mercedes-Benz – Service Advisor",
+      "BMW – Service Advisor"
+    ],
+    expertise: ["Vehicle Diagnostics", "Workshop Management", "Customer Service Excellence", "Award-winning Service Advisory"],
   },
   {
     name: "Gokul",
-    role: "Co-Founder & Mercedes-Benz Certified Technician",
-    description: "Deep mechanical insight and hands-on experience with German vehicles. Anchors service excellence across all departments.",
-    expertise: ["Mercedes-Benz Certified", "Mechanical Excellence", "Service Quality", "Team Leadership"],
+    role: "Co-Founder & Service Manager",
+    experience: "12+ years in the automobile industry",
+    description: "Royal Blue Award winner at Volkswagen. Certified Service Advisor in Volkswagen Group with expertise in workshop front office operations.",
+    image: "/founders/gokul.jpg",
+    careerPath: [
+      "Honda – Technician",
+      "Maruti Suzuki – Customer Care Executive",
+      "Volkswagen – Service Advisor & Assistant Service Manager",
+      "Škoda – Service Manager",
+      "Mercedes-Benz – Service Advisor"
+    ],
+    expertise: ["Workshop Front Office", "Customer Relations", "Technical Diagnosis", "Operational Leadership"],
   },
   {
     name: "Gopal",
-    role: "Design & Bodywork Specialist",
-    description: "Leads bodyshop and custom body kit division. Expert in aesthetic and aerodynamic enhancements for performance vehicles.",
-    expertise: ["Custom Body Kits", "Paint & Bodywork", "Aerodynamic Design", "Fabrication"],
+    role: "Co-Founder & Production Engineering Lead",
+    experience: "10+ years in automotive engineering & manufacturing",
+    description: "Automotive engineering specialist with expertise in production optimization and supplier development for high-performance vehicle solutions.",
+    image: "/founders/gopal.jpg",
+    careerPath: [
+      "Production Engineering – Cost Analysis & Process Optimization",
+      "Supplier Development – Design Reviews & Manufacturing Audits",
+      "Material Innovation – Performance Enhancement & Corrosion Prevention",
+      "Technical Liaison – Engineering, Procurement & Supply Chain",
+      "Quality Assurance – Tolerance Analysis & Defect Reduction"
+    ],
+    expertise: ["Production Process Optimization", "Supplier Development", "Quality Assurance", "Technical Cost Analysis"],
   },
 ];
 
 const values = [
   {
-    icon: Award,
+    iconGif: iconGifs.award,
     title: "Certified Excellence",
     description: "Every team member is certified and continuously trained in the latest German automotive technologies. We maintain the highest industry standards.",
   },
   {
-    icon: Users,
+    iconGif: iconGifs.users,
     title: "Customer First",
     description: "Transparent service, clear communication, and a commitment to exceeding expectations every time. Your satisfaction is our priority.",
   },
   {
-    icon: Target,
+    iconGif: iconGifs.target,
     title: "Precision Focus",
     description: "From routine maintenance to race prep, we deliver OE-level precision in everything we touch. No shortcuts, just excellence.",
   },
   {
-    icon: Briefcase,
+    iconGif: iconGifs.briefcase,
     title: "Professional Integrity",
     description: "Honest assessments, fair pricing, and work that stands behind our reputation. We treat every vehicle as if it were our own.",
   },
@@ -76,15 +106,26 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl sm:text-6xl font-heading font-bold mb-6">
-              German Experts. Precision Meets Passion.
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Founded in 2024, German Werks is South India's premier destination for German and 
-              European automotive care. We deliver OE-level diagnostics, meticulous detailing, 
-              and motorsport-grade performance upgrades — all under one roof.
-            </p>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-3xl flex-1">
+              <h1 className="text-5xl sm:text-6xl font-heading font-bold mb-6">
+                German Experts. Precision Meets Passion.
+              </h1>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Founded in 2024, German Werks is South India's premier destination for German and 
+                European automotive care. We deliver OE-level diagnostics, meticulous detailing, 
+                and motorsport-grade performance upgrades — all under one roof.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Image
+                src="/logo-black.png"
+                alt="German Werks Logo"
+                width={400}
+                height={400}
+                className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -122,14 +163,14 @@ export default function AboutPage() {
                 {milestones.map((milestone) => (
                   <div key={milestone.year}>
                     <div className="flex items-center mb-2">
-                      <div className="w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-sm mr-4">
+                      <div className="w-20 h-20 rounded-full bg-gray-900 flex items-center justify-center text-white font-bold text-xs mr-4 px-2 text-center">
                         {milestone.year}
                       </div>
                       <h4 className="text-lg font-heading font-bold text-gray-900">
                         {milestone.title}
                       </h4>
                     </div>
-                    <p className="text-gray-600 ml-20">
+                    <p className="text-gray-600 ml-24">
                       {milestone.description}
                     </p>
                   </div>
@@ -152,28 +193,42 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {founders.map((founder) => (
               <div
                 key={founder.name}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200"
               >
                 <div className="mb-6">
-                  <div className="w-24 h-24 rounded-full bg-gray-900 mb-4 flex items-center justify-center text-white text-3xl font-bold">
-                    {founder.name[0]}
-                  </div>
+                  {founder.image ? (
+                    <div className="w-28 h-28 rounded-full mb-4 overflow-hidden border-4 border-gray-900 mx-auto flex items-center justify-center">
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        width={96}
+                        height={96}
+                        className="w-24 h-24 object-cover rounded-full"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-28 h-28 rounded-full bg-gray-900 mb-4 flex items-center justify-center text-white text-3xl font-bold mx-auto">
+                      {founder.name[0]}
+                    </div>
+                  )}
                   <h3 className="text-2xl font-heading font-bold text-gray-900">
                     {founder.name}
                   </h3>
-                  <p className="text-sm text-gray-600 font-medium mt-2">
-                    {founder.role}
+                  <p className="text-xs text-blue-600 font-medium mt-1">
+                    {founder.experience}
                   </p>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   {founder.description}
                 </p>
+
+                {/* Expertise */}
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Expertise:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Core Competencies:</h4>
                   <div className="flex flex-wrap gap-2">
                     {founder.expertise.map((skill) => (
                       <span
@@ -209,8 +264,10 @@ export default function AboutPage() {
                 key={value.title}
                 className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
               >
-                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-900 text-white">
-                  <value.icon className="h-7 w-7" />
+                <div 
+                  className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-900 text-white hover:scale-110 hover:rotate-6 transition-all duration-300"
+                >
+                  <img src={value.iconGif} alt={value.title} className="h-7 w-7 invert" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">
                   {value.title}
@@ -234,10 +291,10 @@ export default function AboutPage() {
             Visit our facility or book a service to see our commitment to excellence firsthand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="xl" className="bg-white text-gray-900 hover:bg-gray-100">
+            <Button asChild className="bg-white text-gray-900 hover:bg-gray-100">
               <Link href="/contact">Get in Touch</Link>
             </Button>
-            <Button asChild size="xl" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild className="border-white text-white hover:bg-white/10">
               <Link href="/services">View Our Services</Link>
             </Button>
           </div>

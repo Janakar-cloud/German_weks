@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { OffersPopup } from "@/components/OffersPopup";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ 
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}>
         <Header />
+        <OffersPopup />
         <main className="min-h-screen">
           {children}
         </main>

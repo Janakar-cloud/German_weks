@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
 
 const navigation = {
@@ -12,7 +13,7 @@ const navigation = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Service Packages", href: "/packages" },
     { name: "Contact", href: "/contact" },
   ],
   social: [
@@ -29,9 +30,13 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-heading font-bold text-white">
-              GERMAN WERKS
-            </h3>
+            <Image
+              src="/logo-white.png"
+              alt="German Werks"
+              width={200}
+              height={60}
+              className="h-14 w-auto brightness-0 invert"
+            />
             <p className="text-sm leading-relaxed">
               German Experts. Precision Meets Passion.
             </p>
@@ -94,28 +99,41 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <a
-                  href="tel:+919944438636"
-                  className="text-sm hover:text-white transition-colors"
-                >
-                  +91-994 443 8636
-                </a>
+                <div className="text-sm space-y-1">
+                  <a href="tel:+919092920927" className="hover:text-white transition-colors block">+91 90 92 92 0927</a>
+                  <a href="tel:+919092920928" className="hover:text-white transition-colors block">+91 90 92 92 0928</a>
+                </div>
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:germanwerks26@gmail.com"
+                  href="mailto:service@germanweks.in"
                   className="text-sm hover:text-white transition-colors"
                 >
-                  germanwerks26@gmail.com
+                  service@germanweks.in
                 </a>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <span className="text-sm">
-                  Coimbatore, Tamil Nadu, India
+                  No-9/145, Kaikolapalayam,<br />
+                  Vellanaipatti Road,<br />
+                  Coimbatore – 641 062
                 </span>
               </li>
+            </ul>
+
+            {/* Garage Timings */}
+            <div className="mt-6 pt-6 border-t border-gray-800">
+              <h5 className="text-xs font-semibold uppercase tracking-wider text-white mb-3">
+                Garage Timings
+              </h5>
+              <div className="text-sm space-y-1">
+                <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                <p>Sunday: 10:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+            <ul className="hidden">
             </ul>
 
             {/* Social Links */}

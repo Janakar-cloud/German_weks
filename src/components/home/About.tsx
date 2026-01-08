@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Users, Target } from "lucide-react";
+
+
 
 const founders = [
   {
@@ -23,17 +24,14 @@ const founders = [
 
 const values = [
   {
-    icon: Award,
     title: "Certified Excellence",
     description: "Every team member is certified and continuously trained in the latest German automotive technologies.",
   },
   {
-    icon: Users,
     title: "Customer First",
     description: "Transparent service, clear communication, and a commitment to exceeding expectations every time.",
   },
   {
-    icon: Target,
     title: "Precision Focus",
     description: "From routine maintenance to race prep, we deliver OE-level precision in everything we touch.",
   },
@@ -120,9 +118,6 @@ export function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 text-white">
-                  <value.icon className="h-8 w-8" />
-                </div>
                 <h4 className="text-xl font-heading font-bold text-gray-900 mb-3">
                   {value.title}
                 </h4>

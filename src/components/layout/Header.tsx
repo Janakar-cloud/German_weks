@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,8 +10,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
+  { name: "Packages", href: "/packages" },
   { name: "About", href: "/about" },
-  { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -36,7 +37,15 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="text-2xl font-heading font-bold tracking-tight">
+            <Image
+              src="/logo-white.png"
+              alt="German Werks Logo"
+              width={100}
+              height={100}
+              className="h-24 w-auto"
+              priority
+            />
+            <div className="text-2xl font-newtown font-bold tracking-tight">
               <span className="text-gray-900">GERMAN</span>
               <span className="text-gray-600"> WERKS</span>
             </div>
@@ -57,7 +66,7 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <a href="tel:+919944438636" className="text-gray-600 hover:text-gray-900">
+            <a href="tel:+919092920927" className="text-gray-600 hover:text-gray-900" title="Call Dhilip (Primary Contact)">
               <Phone className="h-5 w-5" />
             </a>
             <a
@@ -107,7 +116,7 @@ export function Header() {
                     <Link href="/contact">Book Service</Link>
                   </Button>
                   <div className="flex justify-center space-x-6">
-                    <a href="tel:+919944438636" className="text-gray-600">
+                    <a href="tel:+919092920927" className="text-gray-600" title="Call Dhilip (Primary Contact)">
                       <Phone className="h-5 w-5" />
                     </a>
                     <a

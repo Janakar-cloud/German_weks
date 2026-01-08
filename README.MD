@@ -44,7 +44,7 @@ Final CTA Strip Ready to Experience the Werks Difference? [Book a Service] [Visi
 
 📞 Contact Information
 
-Phone: +91-994 443 8636
-Email: germanwerks26@gmail.com
+Phone: Gopal +91 90 92 92 0924 | Dhilip +91 90 92 92 0927 (Primary) | Gokul +91 90 92 92 0928 (Secondary)
+Email: service@germanweks.in
 Instagram: @german_werks_
 Location: Coimbatore, Tamil Nadu, India

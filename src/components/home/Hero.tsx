@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -95,51 +96,73 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="mb-6 inline-block rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-sm font-medium text-white border border-white/20">
-            Launching January 2026 • Coimbatore
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 sm:px-10 lg:px-16">
+        <div className="flex flex-col lg:flex-row-reverse items-center justify-between gap-8 lg:gap-12">
+          {/* Text Content - Left Side */}
+          <div className="flex-1 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="mb-6 inline-block rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-sm font-medium text-white border border-white/20">
+                Launching January 2026 • Coimbatore
+              </div>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-newtown font-bold tracking-tight text-white mb-6"
+            >
+              GERMAN WERKS
+              <br />
+              <span className="text-gray-300 text-3xl sm:text-4xl lg:text-5xl">Perfection and Performance.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-2xl text-xl text-gray-300 mb-12 mx-auto lg:mx-0"
+            >
+              South India's premier destination for German and European automotive care.
+              Certified service, OEM-level diagnostics, and motorsport-grade performance upgrades.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Button asChild size="xl" className="bg-white text-gray-900 hover:bg-gray-100">
+                <Link href="/contact">Book Your Service</Link>
+              </Button>
+              <Button asChild size="xl" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent">
+                <Link href="/services">Explore Services</Link>
+              </Button>
+            </motion.div>
           </div>
-        </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold tracking-tight text-white mb-6"
-        >
-          German Experts.
-          <br />
-          <span className="text-gray-300">Precision Meets Passion.</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mx-auto max-w-2xl text-xl text-gray-300 mb-12"
-        >
-          South India's premier destination for German and European automotive care.
-          Certified service, OE-level diagnostics, and motorsport-grade performance upgrades.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button asChild size="xl" className="bg-white text-gray-900 hover:bg-gray-100">
-            <Link href="/contact">Book Your Service</Link>
-          </Button>
-          <Button asChild size="xl" variant="outline" className="border-white text-white hover:bg-white/10">
-            <Link href="/services">Explore Services</Link>
-          </Button>
-        </motion.div>
+          {/* Logo - Right Side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex-shrink-0"
+          >
+            <Image
+              src="/logo-black.png"
+              alt="German Werks Logo"
+              width={500}
+              height={500}
+              className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] object-contain"
+              priority
+            />
+          </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div
@@ -176,7 +199,7 @@ export function Hero() {
               <div className="text-sm text-gray-600">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-gray-900">OE-Level</div>
+              <div className="text-3xl font-bold text-gray-900">OEM-Level</div>
               <div className="text-sm text-gray-600">Diagnostics</div>
             </div>
             <div>

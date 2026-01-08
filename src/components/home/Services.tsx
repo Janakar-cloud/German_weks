@@ -1,43 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Search, Paintbrush, Sparkles, Zap, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: Wrench,
     title: "Routine Maintenance",
-    description: "Keep your German machine running like new with OE-grade tools and certified protocols.",
+    description: "Keep your German machine running like new with OEM-grade tools and certified protocols.",
     href: "/services#maintenance",
   },
   {
-    icon: Search,
     title: "Diagnostics",
     description: "Factory-level fault detection using ISTA, Xentry, and ODIS. No guesswork, just precision.",
     href: "/services#diagnostics",
   },
   {
-    icon: Paintbrush,
     title: "Body & Paint Care",
     description: "Restore perfection with dent removal, full-body paint, and custom body kits.",
     href: "/services#bodywork",
   },
   {
-    icon: Sparkles,
     title: "Detailing & Protection",
-    description: "Premium ceramic coating, PPF, and interior care with premium-grade materials.",
+    description: "Premium ceramic coating | Graphene coating , PPF, and interior care with premium-grade materials.",
     href: "/services#detailing",
   },
   {
-    icon: Zap,
     title: "Performance Tuning",
     description: "Race-ready upgrades with road-ready reliability. ECU remaps and stage upgrades.",
     href: "/services#tuning",
   },
   {
-    icon: Trophy,
     title: "Motorsport Prep",
     description: "Kari Speedway-ready builds with suspension tuning and brake upgrades.",
     href: "/services#motorsport",
@@ -76,9 +69,6 @@ export function Services() {
             >
               <Link href={service.href}>
                 <div className="group h-full bg-gray-50 rounded-2xl p-8 service-card-hover border border-gray-200">
-                  <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gray-900 text-white group-hover:bg-gray-800 transition-colors">
-                    <service.icon className="h-7 w-7" />
-                  </div>
                   <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">
                     {service.title}
                   </h3>
@@ -105,7 +95,7 @@ export function Services() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <Button asChild size="xl">
+          <Button asChild size="xl" className="bg-gray-900 text-white hover:bg-gray-800">
             <Link href="/services">View All Services</Link>
           </Button>
         </motion.div>
