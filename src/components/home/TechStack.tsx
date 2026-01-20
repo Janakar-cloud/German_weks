@@ -20,11 +20,7 @@ const techStack = [
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
     items: ["ECU remapping", "Stage upgrades", "Dyno-ready setups", "Throttle optimization"],
   },
-  {
-    title: "Motorsport Infrastructure",
-    image: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=600&q=80",
-    items: ["Race-prep facilities", "Suspension tuning", "Kari Speedway alignment", "Custom fabrication"],
-  },
+  // Motorsport Infrastructure card fully removed
 ];
 
 export function TechStack() {

@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "German Werks | Premier German & European Automotive Care in Coimbatore",
-  description: "South India's premier destination for German and European automotive care. Certified service, OE-level diagnostics, premium detailing, and motorsport-grade performance upgrades.",
-  keywords: ["BMW service Coimbatore", "Mercedes service", "Audi service", "German car service", "automotive detailing", "ECU remapping", "performance tuning", "motorsport"],
+  description: "South India's premier destination for German and European automotive care. Certified service, OE-level diagnostics, premium detailing, and high-performance upgrades.",
+  keywords: ["BMW service Coimbatore", "Mercedes service", "Audi service", "German car service", "automotive detailing", "ECU remapping", "performance tuning"],
   authors: [{ name: "German Werks" }],
   openGraph: {
     title: "German Werks | German Experts. Precision Meets Passion.",

@@ -16,7 +16,7 @@ const founders = [
     name: "Dhilip",
     role: "Founder & Technical Director",
     experience: "10+ years in the automobile industry",
-    description: "Pan-India No. 1 Service Advisor Award (2025). Expertise in workshop operations, customer service excellence, and advanced vehicle diagnostics.",
+    description: "Pan-India No. 1 Service Advisor Certified (2025) in BMW, Star employee of the year (2022) in Mercedes Benz. Expertise in workshop operations, customer service excellence, and advanced vehicle diagnostics.",
     image: "/founders/dhilip.jpg",
     careerPath: [
       "Mitsubishi – Technician",
@@ -46,7 +46,7 @@ const founders = [
     name: "Gopal",
     role: "Co-Founder & Production Engineering Lead",
     experience: "10+ years in automotive engineering & manufacturing",
-    description: "Automotive engineering specialist with expertise in production optimization and supplier development for high-performance vehicle solutions.",
+    description: "Manufacturing professional with 10 years of experience in the automobile tool room and manufacturing sector, includes custom manufacturing of automobile components according to engineering aspects with high precision, ensuring quality, accuracy, and efficiency.",
     image: "/founders/gopal.jpg",
     careerPath: [
       "Production Engineering – Cost Analysis & Process Optimization",
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <p className="text-xl text-gray-300 leading-relaxed">
                 Founded in 2024, German Werks is South India's premier destination for German and 
                 European automotive care. We deliver OE-level diagnostics, meticulous detailing, 
-                and motorsport-grade performance upgrades — all under one roof.
+                and high-performance upgrades — all under one roof.
               </p>
             </div>
             <div className="flex-shrink-0">

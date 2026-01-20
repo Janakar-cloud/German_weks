@@ -30,11 +30,7 @@ const services = [
     description: "Race-ready upgrades with road-ready reliability. ECU remaps and stage upgrades.",
     href: "/services#tuning",
   },
-  {
-    title: "Motorsport Prep",
-    description: "Kari Speedway-ready builds with suspension tuning and brake upgrades.",
-    href: "/services#motorsport",
-  },
+  // Motorsport Prep service fully removed
 ];
 
 export function Services() {
@@ -50,7 +46,7 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-heading font-bold text-gray-900 mb-4">
-            Certified Care. Motorsport Precision.
+            Certified Care. Precision Engineering.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             All under one roof. Every service executed with German precision and attention to detail.

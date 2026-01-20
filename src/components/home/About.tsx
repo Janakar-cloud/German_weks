@@ -54,7 +54,7 @@ export function About() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Founded in 2024, German Werks is South India's premier destination for German and European 
-            automotive care. We deliver OE-level diagnostics, meticulous detailing, and motorsport-grade 
+            automotive care. We deliver OE-level diagnostics, meticulous detailing, and high-performance 
             performance upgrades — all under one roof.
           </p>
         </motion.div>

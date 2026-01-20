@@ -85,21 +85,7 @@ const services = [
       "Intake and turbo modifications",
     ],
   },
-  {
-    id: "motorsport",
-    title: "Motorsport Prep",
-    tagline: "Kari Speedway-Ready. Built for Enthusiasts.",
-    description: "Professional track preparation with suspension tuning, brake upgrades, and race-spec builds.",
-    image: "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800&q=80",
-    features: [
-      "Track-spec suspension setup",
-      "Performance brake systems",
-      "Roll cage installation",
-      "Weight reduction",
-      "Safety equipment installation",
-      "Race alignment and geometry",
-    ],
-  },
+  // Motorsport Prep service fully removed
 ];
 
 export default function ServicesPage() {
@@ -109,7 +95,7 @@ export default function ServicesPage() {
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-heading font-bold mb-6">
-            Certified Care. Motorsport Precision.
+            Certified Care. Precision Engineering.
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             All under one roof. Every service executed with German precision and attention to detail.

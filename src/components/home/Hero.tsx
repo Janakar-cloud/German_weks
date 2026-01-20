@@ -128,7 +128,7 @@ export function Hero() {
               className="max-w-2xl text-xl text-gray-300 mb-12 mx-auto lg:mx-0"
             >
               South India's premier destination for German and European automotive care.
-              Certified service, OEM-level diagnostics, and motorsport-grade performance upgrades.
+              Certified service, OEM-level diagnostics, and high-performance upgrades.
             </motion.p>
 
             <motion.div

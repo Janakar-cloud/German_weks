@@ -9,7 +9,7 @@ const navigation = {
     { name: "Body & Paint", href: "/services#bodywork" },
     { name: "Detailing & Protection", href: "/services#detailing" },
     { name: "Performance Tuning", href: "/services#tuning" },
-    { name: "Motorsport Prep", href: "/services#motorsport" },
+    // ...removed Motorsport Prep...
   ],
   company: [
     { name: "About Us", href: "/about" },

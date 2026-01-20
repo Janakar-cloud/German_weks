@@ -287,7 +287,7 @@ export default function ContactPage() {
                       <option value="bodywork">Body & Paint</option>
                       <option value="detailing">Detailing & Protection</option>
                       <option value="tuning">Performance Tuning</option>
-                      <option value="motorsport">Motorsport Prep</option>
+                      {/* Motorsport Prep option removed */}
                       <option value="other">Other</option>
                     </select>
                     {errors.service && (
